@@ -11,7 +11,7 @@ module.exports = (options = { dir: 'images' }) ->
         { $ } = file
         { dir } = options
 
-        str = "^((ftp|http)s?:)?//"
+        str = '^((ftp|http)s?:)?//'
         regexp = new RegExp str, 'i'
 
         isNotExternal = (i, img) ->
