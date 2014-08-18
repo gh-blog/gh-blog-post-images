@@ -8,31 +8,38 @@ through2 = require 'through2'
 
 module.exports = (options = { dir: 'images' }) ->
     processFile = (file, enc, done) ->
-        { $ } = file
-        { dir } = options
+        if file.isPost
+            { $ } = file
+            { dir } = options
 
-        str = '^((ftp|http)s?:)?//'
-        regexp = new RegExp str, 'i'
+            str = '^((ftp|http)s?:)?//'
+            regexp = new RegExp str, 'i'
 
-        isNotExternal = (i, img) ->
-            $img = $ img
-            url = $img.attr 'src'
+            isNotExternal = (i, img) ->
+                $img = $ img
+                url = $img.attr 'src'
 
-            if not url.match regexp
-                $img.data 'path', url
-                return yes
-            return no
+                if not url.match regexp
+                    $img.data 'path', url
+                    return yes
+                return no
 
-        $('img').filter(isNotExternal).each (i, img) =>
-            $img = $ img
-            try
-                relative = path.join dir, $img.data 'path'
-                full = path.resolve (path.dirname file.path), relative
-                contents = fs.readFileSync full
-                imgFile = new File { relative, contents }
-                @emit 'data', imgFile
-            catch e
-                @emit 'error', e
+            $('img').filter(isNotExternal).each (i, img) =>
+                $img = $ img
+                try
+                    relative = path.join dir, $img.data 'path'
+                    full = path.resolve (path.dirname file.path), relative
+                    contents = fs.readFileSync full
+                    imgFile = new File { path: relative, contents }
+                    imgFile.isImage = yes
+                    $img.attr 'src', relative
+                    # @TODO: wrap in .media-container
+                    $img.parent('p').addClass 'media-container'
+                    @push imgFile
+                catch e
+                    @emit 'error', e
+
+            file.contents = new Buffer $.html()
 
         done null, file
 
