@@ -1,23 +1,23 @@
 {
-  "name": "pipelog-images",
+  "name": "gh-blog-images",
   "version": "0.0.0",
-  "description": "A Pipelog plugin for detecting local images.",
+  "description": "A gh-blog plugin for detecting local images.",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/forabi/pipelog-images.git"
+    "url": "https://github.com/gh-blog/gh-blog-images.git"
   },
   "keywords": [
-    "pipelog-plugin",
+    "gh-blog-plugin",
     "images"
   ],
   "author": "Muhammad Fawwaz Orabi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/forabi/pipelog-images/issues"
+    "url": "https://github.com/gh-blog/gh-blog-images/issues"
   },
-  "homepage": "https://github.com/forabi/pipelog-images"
+  "homepage": "https://github.com/gh-blog/gh-blog-images"
 }
