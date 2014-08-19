@@ -4,7 +4,7 @@ through2 = require 'through2'
 # @TODO: replace with Vinyl
 { File } = require('gulp-util')
 
-# requires = ['html']
+# requires = ['html', 'info']
 
 module.exports = (options = { dir: 'images' }) ->
     processFile = (file, enc, done) ->
@@ -35,6 +35,7 @@ module.exports = (options = { dir: 'images' }) ->
                     $img.attr 'src', relative
                     # @TODO: wrap in .media-container
                     $img.parent('p').addClass 'media-container'
+                    file.stats.images.push relative
                     @push imgFile
                 catch e
                     @emit 'error', e
