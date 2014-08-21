@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/gh-blog/gh-blog-images/issues"
   },
-  "homepage": "https://github.com/gh-blog/gh-blog-images"
+  "homepage": "https://github.com/gh-blog/gh-blog-images",
+  "dependencies": {
+    "through2": "^0.6.1",
+    "vinyl": "^0.3.2"
+  }
 }
