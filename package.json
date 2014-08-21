@@ -1,5 +1,5 @@
 {
-  "name": "gh-blog-images",
+  "name": "gh-blog-post-images",
   "version": "0.0.0",
   "description": "A gh-blog plugin for detecting local images.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gh-blog/gh-blog-images.git"
+    "url": "https://github.com/gh-blog/gh-blog-post-images.git"
   },
   "keywords": [
     "gh-blog-plugin",
@@ -17,9 +17,9 @@
   "author": "Muhammad Fawwaz Orabi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gh-blog/gh-blog-images/issues"
+    "url": "https://github.com/gh-blog/gh-blog-post-images/issues"
   },
-  "homepage": "https://github.com/gh-blog/gh-blog-images",
+  "homepage": "https://github.com/gh-blog/gh-blog-post-images",
   "dependencies": {
     "through2": "^0.6.1",
     "vinyl": "^0.3.2"
