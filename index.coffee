@@ -33,7 +33,7 @@ module.exports = (options = { dir: 'images' }) ->
                     imgFile.isImage = yes
                     $img.attr 'src', relative
                     $img.parent('p').addClass 'media-container'
-                    file.stats.images.push relative
+                    file.images.push relative
                     @push imgFile
                 catch e
                     @emit 'error', e
