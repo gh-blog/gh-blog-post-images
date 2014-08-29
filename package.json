@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gh-blog/gh-blog-post-images.git"
+    "url": "https://github.com/gh-blog/post-images"
   },
   "keywords": [
     "gh-blog-plugin",
@@ -17,9 +17,9 @@
   "author": "Muhammad Fawwaz Orabi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gh-blog/gh-blog-post-images/issues"
+    "url": "https://github.com/gh-blog/post-images/issues"
   },
-  "homepage": "https://github.com/gh-blog/gh-blog-post-images",
+  "homepage": "https://github.com/gh-blog/post-images",
   "dependencies": {
     "through2": "^0.6.1",
     "vinyl": "^0.3.2"
