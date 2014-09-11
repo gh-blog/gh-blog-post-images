@@ -23,5 +23,9 @@
   "dependencies": {
     "through2": "^0.6.1",
     "vinyl": "^0.3.2"
+  },
+  "gh-blog": {
+    "requires": ["info", "$"],
+    "provides": ["local-images"]
   }
 }

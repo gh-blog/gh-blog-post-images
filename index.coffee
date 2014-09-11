@@ -23,10 +23,11 @@ module.exports = (options = { dir: 'images' }) ->
                     return yes
                 return no
 
-            $('img').filter(isNotExternal).each (i, img) =>
+            $(':not(.emoji) img, img:not(.emoji)').filter(isNotExternal).each (i, img) =>
                 $img = $ img
                 try
                     relative = path.join dir, $img.data 'path'
+                    # @TODO: fix a weird path bug!
                     full = path.resolve (path.dirname file.path), relative
                     contents = fs.readFileSync full
                     imgFile = new File { path: relative, contents }
@@ -34,6 +35,7 @@ module.exports = (options = { dir: 'images' }) ->
                     $img.attr 'src', relative
                     $img.parent('p').addClass 'media-container'
                     file.images.push relative
+                    console.log "Pushing #{imgFile.path}"
                     @push imgFile
                 catch e
                     @emit 'error', e
