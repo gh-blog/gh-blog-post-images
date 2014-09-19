@@ -1,6 +1,6 @@
 {
   "name": "gh-blog-post-images",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A gh-blog plugin for detecting local images.",
   "main": "index.js",
   "scripts": {
